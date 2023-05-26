@@ -9,11 +9,14 @@
       <th>Print length</th>
       <th>Discount(%)</th>
       <th>Price(USD)</th>
+      <th>User Id</th>
       <th> </th>
     </tr>
   </thead>
   <tbody>
     <% @books.each do |book| %>
+
+    <% if book.user == current_user %>
       <tr>
         <td><%= book.book_name %></td>
         <td><%= book.author %></td>
@@ -21,9 +24,12 @@
         <td><%= book.print_length %></td>
         <td><%= book.discount %></td>
         <td><%= book.price %></td>
+        <td><%= book.user_id %></td>
 
         <td><%= link_to "Show", book %></td>
+        
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
