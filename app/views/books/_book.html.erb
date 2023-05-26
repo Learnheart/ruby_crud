@@ -1,15 +1,12 @@
 <div id="<%= dom_id book %>">
-  <p>
-    <strong>Book name:</strong>
-    <%= book.book_name %>
-  </p>
 
-  <p>
-    <strong>Author:</strong>
-    <%= book.author %>
-  </p>
 
-  <p>
+  <div class="mt-4 p-5" style="background-color: #DDDDDD;border-radius: 8px;">
+  <h1><%= book.book_name %></h1>
+  <h5 style="font-style: italic;">-- <%= book.author %> --</h5>
+
+  <br>
+  <p class="mt-2">
     <strong>Language:</strong>
     <%= book.language %>
   </p>
@@ -28,5 +25,11 @@
     <strong>Price:</strong>
     <%= book.price %>
   </p>
+
+
+</div>
+
+
+ 
 
 </div>
