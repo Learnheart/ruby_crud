@@ -1,3 +1,6 @@
+
+<% if user_signed_in?%>
+
 <h1>Book List</h1>
 
 <table class="table table table-striped table-bordered table-hover">
@@ -9,7 +12,6 @@
       <th>Print length</th>
       <th>Discount(%)</th>
       <th>Price(USD)</th>
-      <th>User Id</th>
       <th> </th>
     </tr>
   </thead>
@@ -19,14 +21,14 @@
     <% if book.user == current_user %>
       <tr>
         <td><%= book.book_name %></td>
+
         <td><%= book.author %></td>
         <td><%= book.language %></td>
         <td><%= book.print_length %></td>
         <td><%= book.discount %></td>
         <td><%= book.price %></td>
-        <td><%= book.user_id %></td>
 
-        <td><%= link_to "Show", book %></td>
+        <td><%= link_to "Show details", book, class:"btn btn-outline-secondary btn-sm" %></td>
         
       </tr>
     <% end %>
@@ -35,3 +37,15 @@
 </table>
 
 <%= link_to "New book", new_book_path, class:"btn btn-secondary" %>
+
+<% else %>
+    <div class="container my-5">
+        <h1 class="text-center">Welcome to My Website</h1>
+        <p class="lead text-center">Our website offers a simple, user-friendly management tool.</p>
+    </div>
+
+<div class="container">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8LSNdxyR7tvk6tYk4WNMtSVa2G5RqdynRCg&usqp=CAU" style="width: 100%; height: 400px;">
+</div>
+
+<% end %>

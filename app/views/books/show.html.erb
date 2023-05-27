@@ -3,9 +3,10 @@
 <%= render @book %>
 
 
-  <%= link_to "Edit this book", edit_book_path(@book), class:"btn btn-secondary mt-3" %> 
 
-  <%= link_to "Back to books", books_path, class:"btn btn-secondary mt-3" %>
+  <%= link_to "Edit this book", edit_book_path(@book), class:"btn btn-secondary mt-3 btn-sm" %> 
 
-  <%= button_to "Destroy this book", @book, method: :delete, class:"btn btn-secondary mt-1" %>
+  <%= link_to "Back to books", books_path, class:"btn btn-secondary mt-3 btn-sm" %>
+
+  <%= button_to "Destroy this book", @book, method: :delete, class:"btn btn-secondary mt-1 btn-sm" %>
 
